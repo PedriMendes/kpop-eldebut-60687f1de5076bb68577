@@ -8,7 +8,7 @@
 <style>
 :root{--violet:#9414FA;--cyan:#4CCBFF;--ink:#121212;--soft:#F9F6FB;--card:#fff;--line:#E4E4EC;--mute:#6b6b78}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
+html{scroll-padding-top:110px} @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{font-family:Montserrat,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.5;font-size:16px}
 img{max-width:100%;display:block}
 header{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--ink);color:#fff}
@@ -76,14 +76,25 @@ figcaption{font-size:13px;color:var(--mute);margin-top:8px}
 .tbl .r{border-bottom:1px solid var(--line);font-size:15px}
 .tbl .r small{display:none;font-family:'Roboto Mono',monospace;font-size:10px;text-transform:uppercase;color:var(--mute)}
 .tbl .tot{background:var(--ink);color:#fff;font-weight:800}
-.tbl.fa .c1{opacity:.35} .tbl.fb .c2{opacity:.35} .tbl.fa .tot .c1,.tbl.fb .tot .c2{opacity:1}
+.tbl.fa .c2{opacity:.3} .tbl.fb .c1{opacity:.3} .tbl.fa .tot .c2,.tbl.fb .tot .c1{opacity:1}
+.scs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0}
+.sca{background:var(--ink);color:#fff;border-radius:22px;padding:26px;text-align:center}
+.sca.b{outline:4px solid var(--violet)}
+.sct{font-weight:900;font-size:20px;margin-bottom:14px}
+.scl{font-size:13px;color:#c9c9d6;text-transform:uppercase;letter-spacing:.08em}
+.scm{font-size:30px;font-weight:900;margin:2px 0}
+.sca2{font-size:26px;color:#c9c9d6;margin:2px 0}
+.scr{font-size:56px;font-weight:900;color:var(--cyan);line-height:1.05;margin:2px 0}
+.scp{font-size:14px;color:#d8d8e2}
+.scd{margin-top:14px;font-size:12px;color:#9b9bab}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
 .rec{display:inline-block;background:var(--violet);color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:800;margin-left:8px}
 .close{background:var(--ink);color:#fff;text-align:center;padding:80px 16px}
 .close h2{margin:0 auto 18px;color:#fff}
 .close a{color:#fff}
 .ft{background:var(--violet);color:#fff;padding:14px 16px;font-size:13px;text-align:center;font-weight:600}
 @media (max-width:760px){
- .g2,.g3,.g4,.mocks,.mocks.p3{grid-template-columns:1fr}
+ .g2,.g3,.g4,.mocks,.mocks.p3,.scs{grid-template-columns:1fr} .scr{font-size:46px}
  .bar{grid-template-columns:100px 1fr 90px;font-size:13px}
  .tbl .h{display:none}
  .tbl .r{grid-template-columns:1fr;gap:6px} .tbl .r small{display:block}
@@ -196,8 +207,8 @@ figcaption{font-size:13px;color:var(--mute);margin-top:8px}
  <div class="sc"><button class="on" data-s="">Ver los dos</button><button data-s="fa">Escenario A</button><button data-s="fb">Escenario B <span class="rec" style="background:var(--cyan);color:var(--ink)">recomendado</span></button></div>
  <div class="tbl" id="tbl"><div class="h"><div>Formato</div><div>Escenario A · ARS 2.000.000</div><div>Escenario B · ARS 5.000.000</div></div><div class="r"><div class="c0">YouTube Non-Skippable · CPM</div><div class="c1"><small>Escenario A</small>ARS 1.600.000 · ~374.618 imp.</div><div class="c2"><small>Escenario B</small>ARS 2.800.000 · ~655.581 imp.</div></div><div class="r"><div class="c0">Apps · GameAd</div><div class="c1"><small>Escenario A</small>—</div><div class="c2"><small>Escenario B</small>ARS 1.200.000 · alcance estimado 317 mil</div></div><div class="r"><div class="c0">Roblox · Rewarded Video</div><div class="c1"><small>Escenario A</small>ARS 400.000 · ~40.000 imp.</div><div class="c2"><small>Escenario B</small>ARS 1.000.000 · ~100.000 imp.</div></div><div class="r"><div class="c0">Video Skin sobre el tráiler</div><div class="c1"><small>Escenario A</small>—</div><div class="c2"><small>Escenario B</small>Sin inversión de medios adicional</div></div><div class="r"><div class="c0">Fase 2 · Experiencia propia</div><div class="c1"><small>Escenario A</small>—</div><div class="c2"><small>Escenario B</small>Opcional, cotización aparte</div></div><div class="r" class="tot"><div class="c0">Total</div><div class="c1"><small>Escenario A</small>ARS 2.000.000</div><div class="c2"><small>Escenario B</small>ARS 5.000.000</div></div></div>
  <p class="src">B suma Apps, que llega a los de 12 años que Roblox deja fuera, y más del doble de alcance. Impresiones = inversión ÷ costo unitario. Costos: benchmark del DSP, Q1, ARS (YouTube) y CPM de campañas recientes de Roblox Rewarded en Argentina.</p>
- <h3>Alcance estimado, % de la audiencia de 10 a 18 años y personas</h3>
- <div class="bars"><div class="bar"><span class="bl">A · YouTube</span><span class="bt"><i style="width:39.9%"></i></span><b>6,0% · 357.416</b></div><div class="bar"><span class="bl">B · YouTube</span><span class="bt"><i style="width:66.7%"></i></span><b>10,0% · 598.646</b></div><div class="bar"><span class="bl">B · Apps</span><span class="bt"><i style="width:35.3%"></i></span><b>5,3% · 316.587</b></div><div class="bar hl"><span class="bl">B · Total sin duplicar</span><span class="bt"><i style="width:98.1%"></i></span><b>14,7% · 880.466</b></div></div>
+ <h3>¿Cuánto invierto y a cuántas personas llego? (estimado)</h3>
+ <div class="scs"><div class="sca"><div class="sct">Escenario A</div><div class="scl">Invirtiendo</div><div class="scm">ARS 2.000.000</div><div class="sca2">↓</div><div class="scl">alcanzas, estimado</div><div class="scr">357.416</div><div class="scp">personas · 6,0% de la audiencia de 10 a 18 años</div><div class="scd">YouTube: 357.416</div></div><div class="sca b"><div class="sct">Escenario B<span class="rec">recomendado</span></div><div class="scl">Invirtiendo</div><div class="scm">ARS 5.000.000</div><div class="sca2">↓</div><div class="scl">alcanzas, estimado</div><div class="scr">880.466</div><div class="scp">personas · 14,7% de la audiencia de 10 a 18 años</div><div class="scd">YouTube: 598.646 · Apps: 316.587 · sin duplicar</div></div></div><p class="lead" style="margin-top:14px"><b>Con 2,5 veces la inversión, el alcance sube casi 2,5 veces</b>: el escenario B suma Apps, que llega a los de 12 años que Roblox deja fuera.</p>
  <p class="src">Fuente: U18 DSP · Campaign Planner · estimado, preview del 19/11/2026. Audiencia del planner: 10 a 18 años, Argentina (6,0 M). Alcance estimado, no es garantía de entrega. Frecuencia estimada en YouTube: 1,06 (A) y 1,11 (B). Alcance con 3+ exposiciones: 0,0% (A) y 0,2% (B). El Roblox no tiene alcance en el planner.</p>
  </div>
 </div></section>
@@ -218,7 +229,7 @@ figcaption{font-size:13px;color:var(--mute);margin-top:8px}
 </div></section>
 
 <div class="close"><h2>Hagamos que el debut llegue a cada pantalla.</h2>
- <p>Pedro Mendes · <a href="mailto:pedro@kidscorp.digital">pedro@kidscorp.digital</a> · kidscorp.digital</p></div>
+ <p>Franco · <a href="mailto:franco@kidscorp.digital">franco@kidscorp.digital</a> · kidscorp.digital</p></div>
 <div class="ft">Kidscorp · Propuesta de medios · K-Pop: El Debut · Argentina</div>
 
 <script>
