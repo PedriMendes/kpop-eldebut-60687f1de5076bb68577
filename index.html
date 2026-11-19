@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>K-Pop: El Debut · Propuesta de medios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--violet:#9414FA;--cyan:#4CCBFF;--ink:#121212;--soft:#F9F6FB;--card:#fff;--line:#E4E4EC;--mute:#6b6b78}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:Montserrat,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.5;font-size:16px}
+img{max-width:100%;display:block}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--ink);color:#fff}
+.nav{display:flex;align-items:center;gap:6px;padding:10px 16px;overflow-x:auto;white-space:nowrap}
+.nav img{height:20px;margin-right:12px;flex:none}
+.nav a{color:#fff;text-decoration:none;font-weight:600;font-size:13px;padding:7px 12px;border-radius:999px;flex:none}
+.nav a.on{background:var(--violet)}
+.nav a.inv{margin-left:auto;background:#fff;color:var(--ink);font-weight:800}
+.prog{position:relative;height:6px;background:#2b2b36}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--violet)}
+.prog b{position:absolute;top:-9px;left:0;font-size:20px;color:#fff;transform-origin:center;transition:transform .15s;line-height:1}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.hero{background:linear-gradient(135deg,#1a0630 0%,var(--violet) 70%,#d03bd0 100%);color:#fff;padding:150px 0 70px}
+.hero h1{font-weight:900;font-size:clamp(40px,8vw,84px);line-height:.95;letter-spacing:-.02em}
+.hero p{font-size:clamp(17px,2.4vw,24px);margin-top:18px;max-width:640px;font-weight:600}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.meta span{background:rgba(0,0,0,.35);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
+.route{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+button,.btn{font-family:inherit;font-weight:800;font-size:14px;border:0;border-radius:999px;padding:12px 20px;cursor:pointer;text-decoration:none;display:inline-block}
+.b1{background:#fff;color:var(--ink)} .b2{background:rgba(0,0,0,.4);color:#fff} .on-r{outline:3px solid var(--cyan)}
+section{padding:60px 0}
+section.alt{background:#fff}
+.k{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+h2{font-weight:900;font-size:clamp(26px,4.2vw,42px);line-height:1.08;letter-spacing:-.01em;max-width:820px;margin-bottom:22px}
+h3{font-weight:800;font-size:19px;margin:18px 0 8px}
+p.lead{max-width:760px;font-size:17px;color:#3a3a48;margin-bottom:18px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card b{display:block;font-weight:800;margin-bottom:6px}
+.card span{color:#3a3a48;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:6px 0 10px}
+.stat{background:var(--ink);color:#fff;border-radius:18px;padding:22px}
+.stat b{display:block;font-size:48px;font-weight:900;color:var(--cyan);line-height:1}
+.stat span{display:block;margin-top:10px;font-size:14px;color:#d8d8e2}
+.src{font-size:12px;color:var(--mute);margin-top:10px;max-width:860px}
+.bars{display:grid;gap:10px;margin:8px 0}
+.bar{display:grid;grid-template-columns:150px 1fr 120px;align-items:center;gap:12px;font-size:14px}
+.bar .bt{height:14px;background:#e9e3f2;border-radius:7px;overflow:hidden}
+.bar .bt i{display:block;height:100%;background:#b5b5c3;border-radius:7px}
+.bar.hl .bt i{background:var(--violet)} .bar.hl .bl{font-weight:800}
+.bar b{text-align:right;font-weight:800}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tabs button{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.tabs button.on{background:var(--violet);border-color:var(--violet);color:#fff}
+.pane{display:none} .pane.on{display:block}
+.mocks{display:grid;gap:16px;grid-template-columns:repeat(2,1fr);align-items:start}
+.mocks.p3{grid-template-columns:repeat(3,1fr)}
+figure.mock img{border-radius:14px;width:100%}
+figure.mock.phone img{max-width:260px;margin:0 auto}
+figcaption{font-size:13px;color:var(--mute);margin-top:8px}
+.det{background:#fff;border:1px solid var(--line);border-radius:14px;margin:12px 0;padding:0}
+.det summary{cursor:pointer;font-weight:800;padding:14px 18px;list-style:none}
+.det summary:after{content:"+";float:right;font-size:20px}
+.det[open] summary:after{content:"–"}
+.det>div{padding:0 18px 16px;color:#3a3a48;font-size:15px}
+.time{display:grid;gap:12px}
+.time .t{display:grid;grid-template-columns:200px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.time .t b{font-weight:800}
+.sc{display:flex;gap:10px;margin:6px 0 14px;flex-wrap:wrap}
+.sc button{background:#fff;border:1px solid var(--line)} .sc button.on{background:var(--violet);color:#fff;border-color:var(--violet)}
+.tbl{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.tbl .h,.tbl .r{display:grid;grid-template-columns:1.1fr 1.2fr 1.4fr;gap:12px;padding:14px 18px;align-items:center}
+.tbl .h{font-family:'Roboto Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--mute);border-bottom:1px solid var(--line)}
+.tbl .r{border-bottom:1px solid var(--line);font-size:15px}
+.tbl .r small{display:none;font-family:'Roboto Mono',monospace;font-size:10px;text-transform:uppercase;color:var(--mute)}
+.tbl .tot{background:var(--ink);color:#fff;font-weight:800}
+.tbl.fa .c1{opacity:.35} .tbl.fb .c2{opacity:.35} .tbl.fa .tot .c1,.tbl.fb .tot .c2{opacity:1}
+.rec{display:inline-block;background:var(--violet);color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:800;margin-left:8px}
+.close{background:var(--ink);color:#fff;text-align:center;padding:80px 16px}
+.close h2{margin:0 auto 18px;color:#fff}
+.close a{color:#fff}
+.ft{background:var(--violet);color:#fff;padding:14px 16px;font-size:13px;text-align:center;font-weight:600}
+@media (max-width:760px){
+ .g2,.g3,.g4,.mocks,.mocks.p3{grid-template-columns:1fr}
+ .bar{grid-template-columns:100px 1fr 90px;font-size:13px}
+ .tbl .h{display:none}
+ .tbl .r{grid-template-columns:1fr;gap:6px} .tbl .r small{display:block}
+ .time .t{grid-template-columns:1fr}
+ .hero{padding-top:130px}
+}
+</style></head><body>
+<header>
+ <div class="nav"><img src="img/logo-blanco.png" alt="Kidscorp">
+  <a href="#resumen">Resumen</a><a href="#entender">1 Entender</a><a href="#planificar">2 Planificar</a><a href="#crear">3 Crear</a><a href="#entregar">4 Entregar</a><a href="#medir">5 Medir</a><a class="inv" href="#inversion">Inversión</a></div>
+ <div class="prog" aria-label="Cuenta regresiva al estreno"><i id="pi"></i><b id="ps">★</b></div>
+</header>
+
+<div class="hero"><div class="wrap">
+ <div class="k" style="color:#e9d9ff">Propuesta de medios · Argentina</div>
+ <h1>K-Pop: El Debut</h1>
+ <p>El K-pop ya está en su playlist. Llevémoslo al cine.</p>
+ <div class="meta"><span>8 al 28 de febrero de 2027</span><span>Estreno: 25 de febrero</span><span>Preadolescentes y adolescentes de 12 a 17 años</span><span>ARS 2.000.000 · ARS 5.000.000</span></div>
+ <div class="route"><button class="b1 on-r" id="r1">Ruta expresa</button><button class="b2" id="r2">Explorar todo</button><a class="btn b2" href="#inversion">Ver inversión</a></div>
+</div></div>
+
+<section id="resumen"><div class="wrap">
+ <div class="k">Seguridad y cumplimiento</div>
+ <h2>Una metodología certificada para llegar a menores de edad con seguridad.</h2>
+ <div class="grid g4">
+  <div class="card"><b>Zero PI data</b><span>No recolectamos datos personales de niñas, niños ni adolescentes.</span></div>
+  <div class="card"><b>COPPA · GDPR-K · LGPD</b><span>Alineados con las regulaciones de privacidad infantil.</span></div>
+  <div class="card"><b>kidSAFE</b><span>Certificados bajo el programa FTC Safe Harbor.</span></div>
+  <div class="card"><b>Roblox solo 13+</b><span>Se activa únicamente para 13 años o más.</span></div>
+ </div>
+ <div class="k" style="margin-top:46px">Resumen</div>
+ <h2>El K-pop ya está en su playlist y en YouTube. Falta llevarlo al cine.</h2>
+ <div class="stats"><div class="stat"><b>24%</b><span>escucha K-pop</span></div><div class="stat"><b>75%</b><span>usa YouTube</span></div><div class="stat"><b>9%</b><span>usa Paramount+</span></div></div>
+ <p class="src">Fuente: U18 Radar · Argentina · 10-17 años · panel Kids LATAM · música (n=255) y plataformas (n=255). Respuesta múltiple: los porcentajes no se suman.</p>
+ <div class="grid g3" style="margin-top:18px">
+  <div class="card"><b>Presenta · YouTube</b><span>El tráiler en non-skippable, en canales U18 curados.</span></div>
+  <div class="card"><b>Juega · Apps</b><span>Tres GameAds con CTA al tráiler (escenario B).</span></div>
+  <div class="card"><b>Entra · Roblox</b><span>Video con recompensa para teens de 13 en adelante.</span></div>
+ </div>
+</div></section>
+
+<section id="entender" class="alt"><div class="wrap">
+ <div class="k">1 · Entender · U18 Radar</div>
+ <h2>Dónde están, qué escuchan, cómo deciden y cuándo conectar.</h2>
+ <div class="tabs" data-t="e"><button class="on" data-p="e1">Dónde están</button><button data-p="e2">Qué escuchan y ven</button><button data-p="e3">Cómo deciden</button><button data-p="e4">Cuándo conectar</button></div>
+ <div class="pane on" id="e1"><h3>YouTube llega a 3 de cada 4; Paramount+ a menos de 1 de cada 10.</h3>
+  <div class="bars"><div class="bar hl"><span class="bl">YouTube</span><span class="bt"><i style="width:100.0%"></i></span><b>75,0%</b></div><div class="bar"><span class="bl">Netflix</span><span class="bt"><i style="width:95.5%"></i></span><b>71,6%</b></div><div class="bar"><span class="bl">Disney+</span><span class="bt"><i style="width:58.7%"></i></span><b>44,0%</b></div><div class="bar"><span class="bl">Paramount+</span><span class="bt"><i style="width:12.1%"></i></span><b>9,1%</b></div></div><p class="src">Fuente: U18 Radar · Argentina · 10-17 años · panel Kids LATAM · «¿Qué plataformas usas?» (n=255). Respuesta múltiple.</p>
+  <details class="det"><summary>Apps que usan: Roblox está en el teléfono de 4 de cada 10</summary><div><div class="bars"><div class="bar"><span class="bl">YouTube</span><span class="bt"><i style="width:100.0%"></i></span><b>70,5%</b></div><div class="bar"><span class="bl">WhatsApp</span><span class="bt"><i style="width:90.1%"></i></span><b>63,5%</b></div><div class="bar"><span class="bl">TikTok</span><span class="bt"><i style="width:72.5%"></i></span><b>51,1%</b></div><div class="bar"><span class="bl">Instagram</span><span class="bt"><i style="width:72.3%"></i></span><b>51,0%</b></div><div class="bar hl"><span class="bl">Roblox</span><span class="bt"><i style="width:61.8%"></i></span><b>43,6%</b></div></div><p class="src">Fuente: U18 Radar · Argentina · 10-17 años · panel Kids LATAM · «¿Qué aplicaciones usas en tu teléfono o tableta?» (n=255). Respuesta múltiple.</p></div></details></div>
+ <div class="pane" id="e2"><h3>Casi 1 de cada 4 ya escucha K-pop, a la par del reggaetón.</h3>
+  <div class="bars"><div class="bar"><span class="bl">Pop</span><span class="bt"><i style="width:100.0%"></i></span><b>42,8%</b></div><div class="bar"><span class="bl">Pop latino</span><span class="bt"><i style="width:88.1%"></i></span><b>37,7%</b></div><div class="bar"><span class="bl">Rock nacional</span><span class="bt"><i style="width:81.3%"></i></span><b>34,8%</b></div><div class="bar hl"><span class="bl">K-pop</span><span class="bt"><i style="width:55.8%"></i></span><b>23,9%</b></div><div class="bar"><span class="bl">Reggaetón</span><span class="bt"><i style="width:51.9%"></i></span><b>22,2%</b></div></div><p class="src">Fuente: U18 Radar · Argentina · 10-17 años · panel Kids LATAM · «¿Qué tipos de música escuchas habitualmente?» (n=255). Respuesta múltiple.</p>
+  <details class="det"><summary>En 13 a 17 años, el anime y los musicales ya están entre sus géneros</summary><div><div class="bars"><div class="bar"><span class="bl">Aventuras</span><span class="bt"><i style="width:100.0%"></i></span><b>41,5%</b></div><div class="bar"><span class="bl">Comedia y humor</span><span class="bt"><i style="width:96.1%"></i></span><b>39,9%</b></div><div class="bar hl"><span class="bl">Anime</span><span class="bt"><i style="width:81.0%"></i></span><b>33,6%</b></div><div class="bar hl"><span class="bl">Musicales</span><span class="bt"><i style="width:62.4%"></i></span><b>25,9%</b></div><div class="bar"><span class="bl">Amor y románticas</span><span class="bt"><i style="width:57.1%"></i></span><b>23,7%</b></div></div><p class="src">Fuente: U18 Radar · Argentina · 13-17 años · panel Kids LATAM · «Tipos de películas, programas o series que les gusta ver» (n=140). Respuesta múltiple; se muestran 5 géneros.</p></div></details></div>
+ <div class="pane" id="e3"><h3>No van solos al cine: 4 de cada 10 influyen bastante en la decisión.</h3>
+  <div class="stats"><div class="stat"><b>43%</b><span>de los padres dice que su hijo o hija influye bastante en la decisión de ir al cine</span></div><div class="stat"><b>54%</b><span>tiene dinero de bolsillo, solo o junto con compras de sus padres (base acotada, n=36, acumulado 2024)</span></div></div>
+  <p class="src">Fuente: U18 Radar · Argentina · 10-17 años · panel Family (responden los padres) · «Influencia del hijo/a en la decisión de compra», visitas al cine (n=247)</p><p class="src">Fuente: U18 Radar · Argentina · 10-17 años · panel Kids LATAM · «¿Recibe dinero de bolsillo / le compran cosas?» · acumulado 2024 · base acotada (n=36)</p>
+  <p class="lead" style="margin-top:12px">El target principal son los preadolescentes; los adolescentes y los padres, que compran la entrada, son el alcance secundario. El brief destaca un sesgo femenino.</p></div>
+ <div class="pane" id="e4"><h3>Tres semanas, tres momentos: presentar, anticipar y llevar a la sala.</h3>
+  <div class="time"><div class="t"><b>Presenta · 8 al 14 de febrero</b><span>El tráiler instala la película donde ya miran video.</span></div>
+  <div class="t"><b>Cuenta regresiva · 15 al 24 de febrero</b><span>Se suman los juegos y las recompensas hacia el estreno.</span></div>
+  <div class="t"><b>Estreno · 25 al 28 de febrero</b><span>Último empuje: los días en que la película ya está en cines.</span></div></div>
+  <p class="src">Estreno: 25 de febrero de 2027 (Paramount). El período surge del brief; la distribución por tramos es una propuesta de Kidscorp.</p></div>
+</div></section>
+
+<section id="planificar"><div class="wrap">
+ <div class="k">2 · Planificar · Campaign Planner</div>
+ <h2>Antes de invertir sabemos a cuántos llegamos: de 357 mil a 880 mil (estimado).</h2>
+ <div class="stats"><div class="stat"><b>357 mil</b><span>personas alcanzadas, estimado · Escenario A (6,0% de la audiencia)</span></div><div class="stat"><b>880 mil</b><span>personas alcanzadas, estimado · Escenario B (14,7% de la audiencia)</span></div></div>
+ <p class="src">Fuente: U18 DSP · Campaign Planner · estimado, preview del 19/11/2026. Audiencia del planner: 10 a 18 años, Argentina (6,0 M). Alcance estimado, no es garantía de entrega.</p>
+ <h3>Del kickoff al lanzamiento del 8 de febrero</h3>
+ <div class="time">
+  <div class="t"><b>Aprobación y kickoff</b><span>Se elige el escenario y llegan el tráiler y el key art.</span></div>
+  <div class="t"><b>Validación de materiales</b><span>Roblox aprueba creativo y URL de destino (alrededor de 3 días hábiles).</span></div>
+  <div class="t"><b>Activación</b><span>YouTube: 12 a 24 horas tras validar. Roblox: 2 a 4 días hábiles.</span></div>
+  <div class="t"><b>8 de febrero</b><span>Lanzamiento de la campaña.</span></div>
+  <div class="t"><b>28 de febrero</b><span>Cierre y reporte final con datos e insights.</span></div></div>
+</div></section>
+
+<section id="crear" class="alt"><div class="wrap">
+ <div class="k">3 · Crear</div>
+ <h2>La cuenta regresiva del debut, en tres pantallas.</h2>
+ <div class="tabs" data-t="c"><button class="on" data-p="c1">YouTube</button><button data-p="c2">Apps</button><button data-p="c3">Roblox</button><button data-p="c4">Fase 2</button></div>
+ <div class="pane on" id="c1"><h3>YouTube presenta el tráiler y, en B, el Video Skin lo acompaña entero.</h3>
+  <div class="mocks"><figure class="mock "><img src="img/mock_yt_a.jpg" alt="Escenario A · Non-Skippable de 15 s. Maqueta ilustrativa."><figcaption>Escenario A · Non-Skippable de 15 s. Maqueta ilustrativa.</figcaption></figure><figure class="mock "><img src="img/mock_yt_b.jpg" alt="Escenario B · Non-Skippable con Video Skin. Maqueta ilustrativa."><figcaption>Escenario B · Non-Skippable con Video Skin. Maqueta ilustrativa.</figcaption></figure></div>
+  <p class="lead" style="margin-top:14px">Non-Skippable: hasta 15 s · compra CPM · KPIs: impresiones y views · CTV, mobile y desktop. Video Skin: capa de marca sobre el MP4 del tráiler, sin rodaje ni reedición. Los KPIs son hipótesis y se validan con un test A/B (video limpio contra video con skin). En contenido infantil el clic está restringido: el KPI es la view completa.</p></div>
+ <div class="pane" id="c2"><h3>Tres GameAds en las apps que ya usan, con CTA directo al tráiler.</h3>
+  <div class="mocks p3"><figure class="mock phone"><img src="img/mock_game_catcher.jpg" alt="Catcher · ¡Atrapa las estrellas! · CTA: Ver el tráiler"><figcaption>Catcher · ¡Atrapa las estrellas! · CTA: Ver el tráiler</figcaption></figure><figure class="mock phone"><img src="img/mock_game_rhythm.jpg" alt="Rhythm · Sigue el ritmo del debut · CTA: Conoce la película"><figcaption>Rhythm · Sigue el ritmo del debut · CTA: Conoce la película</figcaption></figure><figure class="mock phone"><img src="img/mock_game_mix.jpg" alt="Mix &amp; Make · Arma tu look de idol · CTA: Ver funciones"><figcaption>Mix &amp; Make · Arma tu look de idol · CTA: Ver funciones</figcaption></figure></div><p class="src">Escenario B · Apps, 12 a 17 años.</p></div>
+ <div class="pane" id="c3"><h3>En Roblox el video es una recompensa que se gana, nunca se compra.</h3>
+  <div class="mocks"><figure class="mock "><img src="img/mock_roblox.jpg" alt="Rewarded Video en Roblox, 13+. Maqueta ilustrativa."><figcaption>Rewarded Video en Roblox, 13+. Maqueta ilustrativa.</figcaption></figure><div><ul style="padding-left:18px;line-height:1.8">
+   <li>Solo para audiencias de 13 años o más: los de 12 quedan fuera de este formato.</li>
+   <li>Cada placement se valida con data propia antes de activarse.</li>
+   <li>La recompensa es gratuita: se gana mirando el video, no se compra.</li>
+   <li>Creativo: MP4 de hasta 10 MB y 30 s, con URL de destino. Roblox aprueba el creativo y la URL (alrededor de 3 días hábiles).</li></ul></div></div></div>
+ <div class="pane" id="c4"><h3>Subir al escenario: una experiencia propia en Roblox, como fase 2.</h3>
+  <div class="grid g3"><div class="card"><b>Qué es</b><span>Una experiencia de ritmo y baile para teens de 13 en adelante, con recompensas que se ganan jugando.</span></div>
+  <div class="card"><b>Cuándo</b><span>Se define con los resultados del escenario B.</span></div>
+  <div class="card"><b>Inversión</b><span>Cotización aparte: no está incluida en ninguno de los dos escenarios.</span></div></div></div>
+ <p class="src" style="margin-top:20px">Todas las piezas son maquetas ilustrativas, sin el key art ni el tráiler de Paramount: las piezas finales se producen con los assets aprobados.</p>
+</div></section>
+
+<section id="entregar"><div class="wrap">
+ <div class="k">4 · Entregar · U18 DSP</div>
+ <h2>Cada impresión se decide con señales U18, sin datos personales.</h2>
+ <div class="grid g4">
+  <div class="card"><b>U18 Prediction Engine</b><span>Un modelo predictivo estima quién es la audiencia en cada impresión.</span></div>
+  <div class="card"><b>Smart Bidding</b><span>Las pujas se ajustan en vivo según el desempeño.</span></div>
+  <div class="card"><b>Frecuencia por edad</b><span>El tope se ajusta a cada rango etario.</span></div>
+  <div class="card"><b>Zero PII</b><span>No se recolectan datos personales.</span></div></div>
+ <div id="inversion" style="padding-top:40px">
+ <div class="k">Inversión</div>
+ <h2>Dos escenarios: el A abre la cuenta regresiva y el B suma Apps y Video Skin.</h2>
+ <div class="sc"><button class="on" data-s="">Ver los dos</button><button data-s="fa">Escenario A</button><button data-s="fb">Escenario B <span class="rec" style="background:var(--cyan);color:var(--ink)">recomendado</span></button></div>
+ <div class="tbl" id="tbl"><div class="h"><div>Formato</div><div>Escenario A · ARS 2.000.000</div><div>Escenario B · ARS 5.000.000</div></div><div class="r"><div class="c0">YouTube Non-Skippable · CPM</div><div class="c1"><small>Escenario A</small>ARS 1.600.000 · ~374.618 imp.</div><div class="c2"><small>Escenario B</small>ARS 2.800.000 · ~655.581 imp.</div></div><div class="r"><div class="c0">Apps · GameAd</div><div class="c1"><small>Escenario A</small>—</div><div class="c2"><small>Escenario B</small>ARS 1.200.000 · alcance estimado 317 mil</div></div><div class="r"><div class="c0">Roblox · Rewarded Video</div><div class="c1"><small>Escenario A</small>ARS 400.000 · ~40.000 imp.</div><div class="c2"><small>Escenario B</small>ARS 1.000.000 · ~100.000 imp.</div></div><div class="r"><div class="c0">Video Skin sobre el tráiler</div><div class="c1"><small>Escenario A</small>—</div><div class="c2"><small>Escenario B</small>Sin inversión de medios adicional</div></div><div class="r"><div class="c0">Fase 2 · Experiencia propia</div><div class="c1"><small>Escenario A</small>—</div><div class="c2"><small>Escenario B</small>Opcional, cotización aparte</div></div><div class="r" class="tot"><div class="c0">Total</div><div class="c1"><small>Escenario A</small>ARS 2.000.000</div><div class="c2"><small>Escenario B</small>ARS 5.000.000</div></div></div>
+ <p class="src">B suma Apps, que llega a los de 12 años que Roblox deja fuera, y más del doble de alcance. Impresiones = inversión ÷ costo unitario. Costos: benchmark del DSP, Q1, ARS (YouTube) y CPM de campañas recientes de Roblox Rewarded en Argentina.</p>
+ <h3>Alcance estimado, % de la audiencia de 10 a 18 años y personas</h3>
+ <div class="bars"><div class="bar"><span class="bl">A · YouTube</span><span class="bt"><i style="width:39.9%"></i></span><b>6,0% · 357.416</b></div><div class="bar"><span class="bl">B · YouTube</span><span class="bt"><i style="width:66.7%"></i></span><b>10,0% · 598.646</b></div><div class="bar"><span class="bl">B · Apps</span><span class="bt"><i style="width:35.3%"></i></span><b>5,3% · 316.587</b></div><div class="bar hl"><span class="bl">B · Total sin duplicar</span><span class="bt"><i style="width:98.1%"></i></span><b>14,7% · 880.466</b></div></div>
+ <p class="src">Fuente: U18 DSP · Campaign Planner · estimado, preview del 19/11/2026. Audiencia del planner: 10 a 18 años, Argentina (6,0 M). Alcance estimado, no es garantía de entrega. Frecuencia estimada en YouTube: 1,06 (A) y 1,11 (B). Alcance con 3+ exposiciones: 0,0% (A) y 0,2% (B). El Roblox no tiene alcance en el planner.</p>
+ </div>
+</div></section>
+
+<section id="medir" class="alt"><div class="wrap">
+ <div class="k">5 · Medir</div>
+ <h2>Planificamos a quién alcanzar; medimos a quién alcanzamos.</h2>
+ <div class="grid g3">
+  <div class="card"><b>KPI principal</b><span>Alcance on-target por segmento de edad, contra lo proyectado.</span></div>
+  <div class="card"><b>KPIs de soporte</b><span>Impresiones, frecuencia y views en YouTube; VCR y CTR en apps; impresiones en Roblox.</span></div>
+  <div class="card"><b>Reportes</b><span>Dashboard en vivo, pacing semanal y reporte final con insights.</span></div></div>
+ <h3 style="margin-top:30px">Próximos pasos</h3>
+ <div class="time">
+  <div class="t"><b>Elegir el escenario</b><span>Paramount y la agencia · antes del kickoff.</span></div>
+  <div class="t"><b>Enviar tráiler y key art</b><span>Paramount y la agencia · antes del kickoff.</span></div>
+  <div class="t"><b>Validar materiales y activar</b><span>Kidscorp · YouTube 12 a 24 h · Roblox 2 a 4 días hábiles.</span></div>
+  <div class="t"><b>Lanzamiento</b><span>Kidscorp · 8 de febrero de 2027.</span></div></div>
+</div></section>
+
+<div class="close"><h2>Hagamos que el debut llegue a cada pantalla.</h2>
+ <p>Pedro Mendes · <a href="mailto:pedro@kidscorp.digital">pedro@kidscorp.digital</a> · kidscorp.digital</p></div>
+<div class="ft">Kidscorp · Propuesta de medios · K-Pop: El Debut · Argentina</div>
+
+<script>
+(function(){
+ function $(s,r){return (r||document).querySelector(s)} function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+ $$('.tabs').forEach(function(t){ $$('button',t).forEach(function(b){ b.addEventListener('click',function(){
+   $$('button',t).forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+   var sec=t.parentNode; $$('.pane',sec).forEach(function(p){p.classList.remove('on')}); $('#'+b.dataset.p).classList.add('on'); }); }); });
+ var r1=$('#r1'),r2=$('#r2');
+ function route(all){ $$('.det').forEach(function(d){ if(all) d.setAttribute('open',''); else d.removeAttribute('open'); });
+   r1.classList.toggle('on-r',!all); r2.classList.toggle('on-r',all); }
+ r1.addEventListener('click',function(){route(false)}); r2.addEventListener('click',function(){route(true)});
+ var tbl=$('#tbl'); $$('.sc button').forEach(function(b){ b.addEventListener('click',function(){
+   $$('.sc button').forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); tbl.className='tbl '+b.dataset.s; }); });
+ var pi=$('#pi'),ps=$('#ps');
+ function prog(){ var h=document.documentElement; var p=Math.min(1,Math.max(0,(h.scrollTop||document.body.scrollTop)/Math.max(1,h.scrollHeight-h.clientHeight)));
+   pi.style.width=(p*100)+'%'; ps.style.left='calc('+(p*100)+'% - 10px)'; ps.style.transform='scale('+(1+p*1.2)+')'; }
+ window.addEventListener('scroll',prog,{passive:true}); prog();
+ var links=$$('.nav a[href^="#"]'); var secs=links.map(function(a){return $(a.getAttribute('href'))});
+ function act(){ var y=window.scrollY+140, cur=0; secs.forEach(function(s,i){ if(s && s.offsetTop<=y) cur=i; });
+   links.forEach(function(a,i){ a.classList.toggle('on',i===cur && !a.classList.contains('inv')); }); }
+ window.addEventListener('scroll',act,{passive:true}); act();
+})();
+</script></body></html>
